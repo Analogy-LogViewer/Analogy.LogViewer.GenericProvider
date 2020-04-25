@@ -11,7 +11,7 @@ using Analogy.LogViewer.GenericProvider.Managers;
 
 namespace Analogy.LogViewer.GenericProvider
 {
-    public class OfflineDataProvider : IAnalogyOfflineDataProvider
+    public abstract class OfflineDataProvider : IAnalogyOfflineDataProvider
     { 
         public Guid ID { get; } = new Guid("E1696270-97BE-489F-9440-453BEA1AB7B8");
         public string OptionalTitle { get; } = string.Empty;
@@ -22,6 +22,13 @@ namespace Analogy.LogViewer.GenericProvider
         public IEnumerable<string> SupportFormats => UserSettingsManager.UserSettings.Settings.SupportFormats;
         public string InitialFolderFullPath { get; } = Environment.CurrentDirectory;
         public bool DisableFilePoolingOption { get; } = false;
+
+
+        public OfflineDataProvider(IUserSettings userSettings,OfflineDataProviderContainer dataProviderSettings)
+        {
+            
+        }
+        
         public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
