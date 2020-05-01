@@ -31,7 +31,7 @@ namespace Analogy.LogViewer.GenericProvider
             DisableFilePoolingOption = disableFilePoolingOption;
         }
     }
-
+    [Serializable]
     public class OfflineDataProviderContainer : OfflineDataProviderUserSettingsContainer
     {
         public Guid ID { get; set; }
