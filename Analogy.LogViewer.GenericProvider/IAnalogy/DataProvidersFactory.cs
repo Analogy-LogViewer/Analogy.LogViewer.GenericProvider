@@ -7,8 +7,8 @@ namespace Analogy.LogViewer.GenericProvider.IAnalogy
 {
     public abstract class DataProvidersFactory : IAnalogyDataProvidersFactory
     {
-        public Guid FactoryId { get; } = Factory.factoryId;
-        public string Title { get; }
+        public Guid FactoryId { get; set; } = Factory.factoryId;
+        public string Title { get; set; }
         public IEnumerable<IAnalogyDataProvider> DataProviders { get; }
 
         protected DataProvidersFactory(string title, IEnumerable<IAnalogyDataProvider> dataProviders)
